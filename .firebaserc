@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "default": "ifit-fed-challenge",
+    "ifit-fed-challenge": "ifit-fed-challenge"
+  }
+}
