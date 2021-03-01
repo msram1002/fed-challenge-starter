@@ -4,6 +4,7 @@ import MetricInfo from './MetricInfo/MetricInfo';
 import ViewDetails from './ViewDetails/ViewDetails';
 import {AssetContext} from '../AssetContext'
 import './Imagecard.css';
+import { CompareArrowsOutlined } from '@material-ui/icons';
 
 function Imagecard () {
   
@@ -17,7 +18,7 @@ function Imagecard () {
     array[i] = {...images[i], isSelected: true };
     setImages(array);
   }
-
+  
   return (
     <div className="cards">
       {images.map((image, index) => (
@@ -27,6 +28,11 @@ function Imagecard () {
             <CardInfo cardInfo={image}/>
             <MetricInfo metricInfo={image}/>
             <ViewDetails hasMoreData={image}/>
+            <div>
+              {JSON.parse(`${image.isSelected}`) &&
+                <p>Card Selected: YES</p>
+              }
+            </div>
           </div>
         </div>
       ))}
