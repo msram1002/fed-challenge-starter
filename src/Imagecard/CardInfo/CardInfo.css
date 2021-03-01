@@ -1,0 +1,10 @@
+.card-container__info__data {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-container__info__data__title {
+  text-transform: capitalize;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
