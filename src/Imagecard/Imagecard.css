@@ -16,8 +16,15 @@
   transition: transform 450ms;
 }
 
+.cards_selected {
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: -7px -8px 1px #0069d2;
+}
+
 .card-container:hover {
   transform: scale(1.08);
+  cursor: pointer;
 }
 
 .card-container__image {

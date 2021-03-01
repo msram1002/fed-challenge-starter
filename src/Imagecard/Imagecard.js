@@ -9,10 +9,19 @@ function Imagecard () {
   
   const [images, setImages] = useContext(AssetContext);
 
+  const handleCard = (i) => {
+    const array = [...images];
+    array.forEach(function (arrayItem) {
+      arrayItem.isSelected = false;
+    });
+    array[i] = {...images[i], isSelected: true };
+    setImages(array);
+  }
+
   return (
     <div className="cards">
       {images.map((image, index) => (
-        <div key={index} className="card-container">
+        <div key={index} className={`card-container ${image.isSelected && "cards_selected"}`} onClick={() => handleCard(index)}>
           <img className="card-container__image" src={`images/${image.thumbImg}`} alt={image.thumbImg}/>
           <div className="card-container__info">
             <CardInfo cardInfo={image}/>
